@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz</title>
+  <style>
+    body { font-family: sans-serif; display:flex; justify-content:center; align-items:center; height:100vh; background:#f0f0f0; margin:0; }
+    #quiz { background:#fff; padding:20px; border-radius:8px; box-shadow:0 0 10px #ccc; width:300px; }
+    button { margin:5px 0; width:100%; padding:10px; font-size:16px; cursor:pointer; }
+    #result { margin-top:15px; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <div id="quiz">
+    <div id="q">What is 5+5?</div>
+    <button onclick="check(3)">3</button>
+    <button onclick="check(4)">4</button>
+    <button onclick="check(10)">10</button>
+    <div id="result"></div>
+  </div>
+  <script>
+    function check(a){
+      document.getElementById('result').textContent = a===10 ? 'Correct!' : 'Wrong!';
+    }
+  </script>
+</body>
+</html>
