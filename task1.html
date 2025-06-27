@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SAIndia IT Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fdfdfd;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #283c86, #45a247);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    nav {
+      background: #222;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #00ffae;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .domains {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .domain-card {
+      background: #ffffff;
+      border: 1px solid #eee;
+      padding: 20px;
+      width: 260px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .domain-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .domain-card h3 {
+      color: #00695c;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .apply-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 25px;
+      background-color: #00cba9;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .apply-btn:hover {
+      background-color: #00b39f;
+    }
+
+    @media (max-width: 768px) {
+      .domains {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#domains">Domains</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>SAIndia IT Services</h1>
+    <p>Empowering the next generation of tech leaders through hands-on training and mentorship across multiple domains.</p>
+  </header>
+
+  <section id="about">
+    <h2>About the Internship</h2>
+    <p>This internship program by SAIndia offers hands-on experience, real-world projects, and expert mentorship across trending technologies. Whether you're just starting out or looking to grow your skills, SAIndia is the perfect place to launch your tech career.</p>
+  </section>
+
+  <section id="domains">
+    <h2>Tech Domains</h2>
+    <div class="domains">
+      <div class="domain-card">
+        <h3>Web Development</h3>
+        <p>Build responsive, modern websites using HTML, CSS, JavaScript, and frameworks like React.</p>
+      </div>
+      <div class="domain-card">
+        <h3>Java programming</h3>
+        <p>Analyze real-world data with Python, Pandas, and visualization tools. Gain insights and build models.</p>
+      </div>
+      <div class="domain-card">
+        <h3>AI / Machine Learning</h3>
+        <p>Work with machine learning algorithms, build predictive models, and explore deep learning.</p>
+      </div>
+      <div class="domain-card">
+        <h3>Python programming</h3>
+        <p>Understand digital threats, encryption, network security, and ethical hacking practices.</p>
+      </div>
+      <div class="domain-card">
+        <h3>Data analytics</h3>
+        <p>Create cross-platform mobile applications using Flutter or native Android development.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <p>Have questions or want to apply? Reach out to us or fill out the application form.</p>
+    <a href="mailto:apply@saindia.org" class="apply-btn">Apply Now</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SAIndia. All rights reserved.</p>
+    <p>Designed with ❤️ for aspiring technologists.</p>
+  </footer>
+
+</body>
+</html>
