@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic Blog Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f9;
+      color: #333;
+      font-size: 18px;
+    }
+
+    header {
+      background-color: #4b2aad;
+      color: #fff;
+      padding: 30px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 36px;
+    }
+
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 30px;
+    }
+
+    .main-content {
+      flex: 3;
+      padding: 30px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-right: 20px;
+    }
+
+    .sidebar {
+      flex: 1;
+      background-color: #fff;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .post {
+      margin-bottom: 40px;
+    }
+
+    .post h2 {
+      color: #4b2aad;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .post img {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+
+    .post p {
+      line-height: 1.8;
+      font-size: 18px;
+      white-space: pre-line;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #4b2aad;
+      color: #fff;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-size: 17px;
+      border-radius: 6px;
+    }
+
+    .sidebar h3 {
+      margin-bottom: 15px;
+      font-size: 22px;
+      color: #4b2aad;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 12px;
+    }
+
+    .sidebar ul li a {
+      color: #333;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .sidebar ul li a:hover {
+      color: #4b2aad;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #4b2aad;
+      color: white;
+      margin-top: 30px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Dynamic Blog</h1>
+    <p style="font-size: 20px;">Tech | Design | Code | Innovation</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Blog</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="container">
+    <div class="main-content" id="blog-posts">
+      <!-- Blog posts will be inserted here -->
+    </div>
+
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      <ul>
+        <li><a href="#">Web Development</a></li>
+        <li><a href="#">Mobile Apps</a></li>
+        <li><a href="#">AI & ML</a></li>
+        <li><a href="#">Cloud</a></li>
+        <li><a href="#">Startups</a></li>
+      </ul>
+
+      <h3>Recent Posts</h3>
+      <ul>
+        <li><a href="#">Why JavaScript Still Rules</a></li>
+        <li><a href="#">5 AI Tools That Boost Productivity</a></li>
+        <li><a href="#">Mastering Responsive Design</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My Dynamic Blog. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const posts = [
+      {
+        title: "Getting Started with HTML, CSS & JS",
+        date: "July 7, 2025",
+        image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=800&q=60",
+        content: `If you're just stepping into the world of web development, you're in for an exciting journey! Three core technologies form the foundation of every website:
+
+1. HTML (HyperText Markup Language) – This is the skeleton of your web page. It structures content using elements like headings, paragraphs, images, and links.
+
+2. CSS (Cascading Style Sheets) – CSS adds style and design to your page. It controls colors, layouts, fonts, spacing, and makes your site look polished.
+
+3. JavaScript – This is what brings your site to life. JavaScript handles interactivity: think dropdown menus, buttons that respond to clicks, or forms that validate input.`
+      },
+      {
+        title: "How to Use AI in Web Development",
+        date: "July 5, 2025",
+        image: "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=800&q=60",
+        content: `Artificial Intelligence (AI) is transforming the way we build and interact with websites. Whether you're a beginner or an experienced developer, integrating AI into web development can enhance user experience, automate tasks, and make your applications smarter.
+
+Some uses include:
+- AI-powered chatbots for instant customer support
+- Content generation tools
+- Image and speech recognition
+- Intelligent code suggestions and testing tools`
+      },
+      {
+        title: "Best VS Code Extensions for Developers",
+        date: "June 30, 2025",
+        image: "https://images.unsplash.com/photo-1556155092-8707de31f9c4?auto=format&fit=crop&w=800&q=60",
+        content: `Visual Studio Code (VS Code) is one of the most popular code editors for web developers — and one of its biggest strengths is its powerful ecosystem of extensions. 
+
+Top recommendations:
+- Live Server: See changes instantly in your browser
+- Prettier: Auto-format your code
+- GitLens: Supercharge your Git workflow
+- ESLint: Keep your JavaScript code clean and error-free`
+      }
+    ];
+
+    const blogContainer = document.getElementById("blog-posts");
+
+    posts.forEach(post => {
+      const postHTML = `
+        <div class="post">
+          <h2>${post.title}</h2>
+          <small style="font-size:16px;">Published on ${post.date}</small>
+          <img src="${post.image}" alt="${post.title}" />
+          <p>${post.content}</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      `;
+      blogContainer.innerHTML += postHTML;
+    });
+  </script>
+</body>
+</html>
