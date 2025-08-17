@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arti Kavate | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Light mode */
+    body.light-mode {
+      background: #f5f5f5;
+      color: #111;
+    }
+    body.light-mode header {
+      background: rgba(255, 255, 255, 0.85);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    body.light-mode nav ul li a {
+      color: #333;
+    }
+    body.light-mode nav ul li a:hover {
+      color: #e52e71;
+    }
+    body.light-mode .about p {
+      color: #333;
+    }
+    body.light-mode .project {
+      background: #fff;
+      color: #111;
+      border: 1px solid #ddd;
+    }
+    body.light-mode .project h3 {
+      color: #e52e71;
+    }
+    body.light-mode .contact-info {
+      color: #333;
+    }
+    body.light-mode footer {
+      background: #eee;
+      color: #555;
+    }
+
+    /* Navbar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      position: sticky;
+      top: 0;
+      background: rgba(15, 12, 41, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    header h2 {
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #ddd;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff8a00;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle {
+      cursor: pointer;
+      padding: 8px 14px;
+      border-radius: 20px;
+      border: none;
+      font-size: 14px;
+      font-weight: 500;
+      background: #ff8a00;
+      color: #fff;
+      transition: 0.3s;
+    }
+    .theme-toggle:hover {
+      background: #e52e71;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      margin: 15px 0 25px;
+      font-size: 22px;
+      color: #ccc;
+    }
+
+    .hero img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #ff8a00;
+      margin: 20px 0;
+      box-shadow: 0 0 30px rgba(229, 46, 113, 0.7);
+      transition: transform 0.4s;
+    }
+
+    .hero img:hover {
+      transform: scale(1.08);
+    }
+
+    .btns {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      color: #fff;
+      box-shadow: 0 0 15px rgba(229, 46, 113, 0.6);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(229, 46, 113, 1);
+    }
+
+    .btn-outline {
+      border: 2px solid #ff8a00;
+      color: #ff8a00;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: #ff8a00;
+      color: #fff;
+      transform: translateY(-4px);
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 10%;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* About */
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      color: #ddd;
+      font-size: 18px;
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 25px;
+    }
+
+    .project {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 25px;
+      border-radius: 16px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 25px rgba(0,0,0,0.4);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-8px) scale(1.03);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .project h3 {
+      margin-bottom: 10px;
+      color: #ff8a00;
+    }
+
+    .project a {
+      text-decoration: none;
+      color: #e52e71;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .project a:hover {
+      color: #fff;
+    }
+
+    /* Contact */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      color: #ccc;
+      font-size: 18px;
+    }
+
+    .contact-info a {
+      color: #ff8a00;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-info a:hover {
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      margin-top: 40px;
+      color: #888;
+      font-size: 14px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @media(max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h2>Arti Kavate</h2>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="/mnt/data/updated 1.pdf" target="_blank">CV</a></li> <!-- CV link -->
+      </ul>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Hello, <br> I'm <span>Arti</span></h1>
+    <p>IT Student | Web Developer | Problem Solver</p>
+    <img src="https://via.placeholder.com/180" alt="Profile Picture">
+    <div class="btns">
+      <button class="btn btn-primary">Get a Project?</button>
+      <a href="/mnt/data/updated 1.pdf" class="btn btn-outline" target="_blank">📄 View CV</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <p>
+      👋 I'm Arti, an aspiring IT fresher passionate about coding, web development, and problem-solving.  
+      With hands-on experience in projects like a Portfolio Website, Expense Tracker, and Dynamic Blog,  
+      I enjoy turning ideas into interactive digital solutions.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects" id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Web page of SAINDIA</h3>
+      <p>Built using HTML, CSS, and JavaScript</p>
+      <a href="https://github.com/artikavate7/Demo-task1/blob/main/task1.html" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h3>Expense Tracker</h3>
+      <p>Track expenses with chart visualization</p>
+      <a href="https://github.com/artikavate7/Demo-task1/blob/main/Task%202.html" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h3>Dynamic Blog</h3>
+      <p>Create, edit, and delete blog posts</p>
+      <a href="https://github.com/artikavate7/Demo-task1/blob/main/Task%203.html" target="_blank">View on GitHub</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:artikavate@gmail.com">artikavate@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/artikavate7" target="_blank">github.com/artikavate7</a></p>
+      <p>LinkedIn: <a href="#" target="_blank">linkedin.com/in/your-profile</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Arti Kavate. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      const btn = document.querySelector('.theme-toggle');
+      if (document.body.classList.contains('light-mode')) {
+        btn.textContent = "☀️ Light";
+      } else {
+        btn.textContent = "🌙 Dark";
+      }
+    }
+  </script>
+</body>
+</html>
